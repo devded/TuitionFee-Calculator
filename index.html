@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Title</title>
+
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col m4 s12">1</div>
+            <div class="col m4 s12">
+                <div class="input-field">
+                    <input id="totalCredit" type="number" class="validate">
+                    <label for="totalCredit">Total Credit</label>
+                </div>
+                <div class="input-field">
+                    <input id="creditFee" type="number" class="validate">
+                    <label for="creditFee">Credit Fee</label>
+                </div>
+                <div class="input-field">
+                    <input id="waiver" type="number" class="validate">
+                    <label for="waiver">Waiver</label>
+                </div>
+                <div class="input-field">
+                    <input id="labFee" type="number" class="validate">
+                    <label for="labFee">Lab Fee</label>
+                </div>
+                <div class="input-field">
+                    <input id="othersFee" type="number" class="validate">
+                    <label for="othersFee">Others Fee</label>
+                </div>
+                <div class="center-align">
+                    <button onclick="calculate()"
+                        class=" collapsible center-align btn waves-effect purple accent-1 waves-light" type="submit"
+                        name="action">Calculate Tution Fee
+                        <i class="material-icons right">arrow_downward</i>
+                    </button>
+                </div>
+                <div class="input-field orange darken-2">
+                    <input placeholder="Tution Fee" id="tutionFee" type="text" readonly class="validate">
+                    <!-- <label for="tutionFee">Tution Fee</label> -->
+                </div>
+                <div class="input-field blue lighten-1">
+                    <input placeholder="50% Tution Fee" id="tutionFeeHalf" type="text" readonly class="validate">
+                    <!-- <label for="tutionFeeHalf">50% Tution Fee</label> -->
+                </div>
+                
+            </div>
+        </div>
+        <div class="col m4 s12">3</div>
+
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
+
+
+<script>
+    function calculate() {
+        var waiver = parseInt(document.getElementById("waiver").value);
+        var totalCredit = parseInt(document.getElementById("totalCredit").value);
+        var creditFee = parseInt(document.getElementById("creditFee").value);
+        var othersFee = parseInt(document.getElementById("othersFee").value);
+        var labFee = parseInt(document.getElementById("labFee").value);
+
+        var temp1 = waiver/100;
+        var temp2 = totalCredit*creditFee;
+        var temp3 = temp2 * temp1;
+        var temp4 = temp2 - temp3;
+        var temp5 = temp4 + labFee + othersFee;
+        var temp6 = temp5/2;
+        console.log(temp5);
+
+        document.getElementById("tutionFee").value = "Tution Fee: "+temp5;
+        document.getElementById("tutionFeeHalf").value = "50% Tution Fee: " +temp6;
+
+    }
+</script>
