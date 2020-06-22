@@ -1,6 +1,6 @@
 #### TuitionFee-Calculator
 ----
-`TuitionFee-Calculator (C)` This is the first program that i wrote that do some calculation to find our tutionfee. I sill remember that moring i was in Primeasia University Lab 404 when i solve the bug and it work completely.
+`TuitionFee-Calculator (C)` This is the first program that i wrote that calculate tutionfee. I sill remember that moring i was in Primeasia University Lab 404 when i solve the bug and it work completely.
 
     Release: April - August (2017)
 
