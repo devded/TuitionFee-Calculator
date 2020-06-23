@@ -64,9 +64,14 @@
                     <input placeholder="Tution Fee" id="tutionFee" type="text" readonly class="validate">
                     <!-- <label for="tutionFee">Tution Fee</label> -->
                 </div>
-                <div class="input-field blue lighten-1">
+                <!-- <div class="input-field blue lighten-1">
                     <input placeholder="50% Tution Fee" id="tutionFeeHalf" type="text" readonly class="validate">
-                    <!-- <label for="tutionFeeHalf">50% Tution Fee</label> -->
+                    <label for="tutionFeeHalf">50% Tution Fee</label> 
+                </div> -->
+
+                <div class="input-field green lighten-1">
+                    <input placeholder="After 10% Waiver For Corona" id="tutionFeeHalfCorona" type="text" readonly class="validate">
+                    <label for="tutionFeeHalf">After 10% Waiver For Corona Tuition Fee:</label> 
                 </div>
                 
             </div>
@@ -97,8 +102,13 @@
         var temp5 = temp4 + labFee + othersFee;
         var temp6 = temp5/2;
         
-        document.getElementById("tutionFee").value = "Tuition Fee: "+temp5;
-        document.getElementById("tutionFeeHalf").value = "50% Tuition Fee: " +temp6;
+        document.getElementById("tutionFee").value = "Normal Tuition Fee: "+temp5;
+        //document.getElementById("tutionFeeHalf").value = "50% Tuition Fee: " +temp6;
+
+        var temp7 = (temp5 * 10)/100;
+        var temp8 = temp5-temp7;
+
+        document.getElementById("tutionFeeHalfCorona").value = " " +temp8;
 
     }
 </script>
